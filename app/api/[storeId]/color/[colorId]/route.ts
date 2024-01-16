@@ -23,14 +23,7 @@ export async function PATCH (req:Request,{params}:{params:{colorId:string, store
         
         }
 
-        const storeByUserId = await prismadb.store.findFirst({where:{
-            id:params.storeId,
-            userId
-        }
-        })
-        if (!storeByUserId){
-            return NextResponse.json({'message':'unauthorised', 'status':403});
-        }
+        
 
         const color = await prismadb.color.update({where:{id:params.colorId},data:{name,value}})
         return NextResponse.json({'message':"successfully updated records",color,status:200})

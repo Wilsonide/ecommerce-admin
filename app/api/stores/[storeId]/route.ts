@@ -39,7 +39,7 @@ export async function DELETE (req:Request,{params}:{params:{storeId:string}}){
             return NextResponse.json({"message":"storeId missing",status:400})
         
         }
-        const store = await prismadb.store.deleteMany({where:{id:params.storeId,userId}})
+        const store = await prismadb.store.delete({where:{id:params.storeId}})
         return NextResponse.json({'message':"successfully updated records",store,status:200})
         
     } catch (error) {

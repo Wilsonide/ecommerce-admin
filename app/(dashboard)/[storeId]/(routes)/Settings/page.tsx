@@ -13,15 +13,12 @@ const SettingsPage = async ({params}:SettingPageProps) => {
     const userId = await UserId()
 
     if (!userId) {
-        redirect('/sign-in')
+        redirect('/auth/login')
     }
 
-    const store = await prismadb.store.findFirst({where: {
-        userId: userId
-    }
-})
+    const store = await prismadb.store.findFirst()
     if (!store){
-        redirect('/sign-in')
+        redirect('/auth/login')
     }
 
   return (

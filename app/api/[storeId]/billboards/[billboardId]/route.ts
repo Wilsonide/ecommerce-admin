@@ -23,16 +23,9 @@ export async function PATCH (req:Request,{params}:{params:{billboardId:string, s
         
         }
 
-        const storeByUserId = await prismadb.store.findFirst({where:{
-            id:params.storeId,
-            userId
-        }
-        })
-        if (!storeByUserId){
-            return NextResponse.json({'message':'unauthorised', 'status':403});
-        }
+       
 
-        const billboard = await prismadb.billboard.updateMany({where:{id:params.billboardId},data:{label,imageUrl}})
+        const billboard = await prismadb.billboard.update({where:{id:params.billboardId},data:{label,imageUrl}})
         return NextResponse.json({'message':"successfully updated records",billboard,status:200})
         
     } catch (error) {

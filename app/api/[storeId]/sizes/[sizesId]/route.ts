@@ -23,15 +23,7 @@ export async function PATCH (req:Request,{params}:{params:{sizeId:string, storeI
         
         }
 
-        const storeByUserId = await prismadb.store.findFirst({where:{
-            id:params.storeId,
-            userId
-        }
-        })
-        if (!storeByUserId){
-            return NextResponse.json({'message':'unauthorised', 'status':403});
-        }
-
+        
         const size = await prismadb.size.update({where:{id:params.sizeId},data:{name,value}})
         return NextResponse.json({'message':"successfully updated records",size,status:200})
         

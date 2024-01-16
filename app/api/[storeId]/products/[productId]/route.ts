@@ -52,14 +52,7 @@ export async function PATCH (req:Request,{params}:{params:{productId:string, sto
 
         
 
-        const storeByUserId = await prismadb.store.findFirst({where:{
-            id:params.storeId,
-            userId
-        }
-        })
-        if (!storeByUserId){
-            return NextResponse.json({'message':'unauthorised', 'status':403});
-        }
+        
 
         await prismadb.product.update({ where:
             {
@@ -110,14 +103,7 @@ export async function DELETE (req:Request,{params}:{params:{storeId:string,produ
         
         }
 
-        const storeByUserId = await prismadb.store.findFirst({where:{
-            id:params.storeId,
-            userId
-        }
-        })
-        if (!storeByUserId){
-            return NextResponse.json({'message':'unauthorised', 'status':403});
-        }
+        
 
         const product = await prismadb.product.delete({where:{id:params.productId}})
         return NextResponse.json({'message':"successfully updated records",product,status:200})
