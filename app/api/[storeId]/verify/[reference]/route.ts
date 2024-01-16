@@ -41,7 +41,7 @@ export async function POST(req: Request, {params}: {params:{storeId:string}}){
 }
 
 
-export default async (req: NextApiRequest, resp: NextApiResponse) =>{
+/* export default async (req: NextApiRequest, resp: NextApiResponse) =>{
     const {
         query : {reference},
 
@@ -61,4 +61,4 @@ export default async (req: NextApiRequest, resp: NextApiResponse) =>{
         resp.status(400).json({success:false});
         
     }
-}
+} */

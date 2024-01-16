@@ -5,7 +5,7 @@ import {format} from 'date-fns'
 import { CategoriesClient } from './components/client'
 import { CategoryColumn } from './components/columns'
 
-export const CategoryPage = async ({params}: {params: {storeId:string}}) => {
+const CategoryPage = async ({params}: {params: {storeId:string}}) => {
 
   const categories = await prismadb.category.findMany({where:
     {

@@ -5,7 +5,7 @@ import {format} from 'date-fns'
 import { ColorClient } from './components/client'
 import { ColorColumn } from './components/columns'
 
-export const ColorPage = async ({params}: {params: {storeId:string}}) => {
+const ColorPage = async ({params}: {params: {storeId:string}}) => {
   const colors = await prismadb.color.findMany({where:
     {
       storeId:params.storeId

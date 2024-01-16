@@ -7,7 +7,7 @@ import { useSearchParams } from 'next/navigation'
 import React, { useCallback, useEffect, useState } from 'react'
 import { BeatLoader } from 'react-spinners'
 
-const page = () => {
+const Verificationpage = () => {
     const [error,setError] = useState< string | undefined>('')
     const [success,setSuccess] = useState< string | undefined>('')
     const searchParams = useSearchParams()
@@ -34,7 +34,7 @@ const page = () => {
     },[onSubmit])
 
   return (
-    <CardWrapper headerLabel='Verify Your Email' backButtonHref='/auth/login' backButtonLabel='Back to login'>
+    <CardWrapper headerLabel='Verify Your Email' backButtonHref='/auth/login' backButtonLabel='Back to login' title='Email Verification Page'>
         <div className='flex items-center w-full justify-center'>
             { !success && !error && <BeatLoader/>}
             <FormSuccess message={success}/>
@@ -44,4 +44,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Verificationpage

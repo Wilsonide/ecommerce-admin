@@ -4,7 +4,7 @@ import { CardWrapper } from './card-wrapper'
 
 const ErrorCard = () => {
   return (
-    <CardWrapper headerLabel='Ooops! something went wrong!' backButtonHref='/auth/login' backButtonLabel='Back to login'>
+    <CardWrapper headerLabel='Ooops! something went wrong!' backButtonHref='/auth/login' backButtonLabel='Back to login' title='Something went wrong!!'>
         <div className='w-full flex items-center justify-center'>
             <ExclamationTriangleIcon className='text-destructive'/>
         </div>

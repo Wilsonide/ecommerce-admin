@@ -1,11 +1,12 @@
 
 import prismadb from '@/lib/prismadb'
+import {FC} from 'react'
 import React from 'react'
 import {format} from 'date-fns'
 import { BillboardsClient } from './components/client'
 import { BillboardColumn } from './components/columns'
 
-export const Billboards = async ({params}: {params: {storeId:string}}) => {
+const Billboardpage = async ({params}: {params: {storeId:string}}) => {
   const billboards = await prismadb.billboard.findMany({where:
     {
       storeId:params.storeId
@@ -32,4 +33,4 @@ export const Billboards = async ({params}: {params: {storeId:string}}) => {
   )
 }
 
-export default Billboards
+export default Billboardpage

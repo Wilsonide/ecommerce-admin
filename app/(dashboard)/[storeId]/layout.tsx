@@ -28,7 +28,7 @@ params: {storeId: String}
 
     return (
         <> 
-            {/* @ts-expect-error Server Component */}
+            {/* @ts-ignore */}
             <Navbar/>
             {children}
         </>
