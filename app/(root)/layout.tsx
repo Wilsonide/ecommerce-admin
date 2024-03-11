@@ -1,5 +1,6 @@
 
 import { auth } from "@/auth";
+import { Logout } from "@/components/auth/logout";
 import { FormError } from "@/components/form-error";
 import { currentRole } from "@/lib/auth";
 
@@ -16,8 +17,9 @@ export default async function SetupLayoutPage ({children}:{children:React.ReactN
 
     if (role !== "ADMIN"){
         return (
-            <div className="flex items-center justify-center h-full font-semibold">
+            <div className="flex flex-col gap-2 items-center justify-center h-full font-semibold">
                 <FormError message="you do not have permission to view this page. You are not an ADMIN"/>
+                <Logout>LogOut</Logout>
             </div>
         )
     }

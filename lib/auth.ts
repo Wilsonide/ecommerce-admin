@@ -1,8 +1,18 @@
 import {auth} from '@/auth';
+import prismadb from './prismadb';
 
 export const currentUser = async () => {
     const session = await auth();
-    return session?.user;
+    if (!session?.user?.email) return null
+
+    const user = prismadb.user.findUnique({where:
+        {email: session.user.email}
+        
+
+    })
+
+    if (!user) return null
+    return user
 }
 
 export const currentRole = async () => {

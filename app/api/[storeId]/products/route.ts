@@ -113,12 +113,19 @@ export async function GET ( req:Request,{params}: {params:{storeId:string}}){
                 category:true,
                 color:true,
                 size:true,
+                reviews:true,
             },
             orderBy: {
                 createdAt: 'desc'
             }
 
         })
+
+        /* const searchProducts = products.map((product) => {if (product.name.includes(searchTerm)) {
+            return product
+        }}) */
+          
+
         return NextResponse.json(products);
         
     } catch (error) {

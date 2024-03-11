@@ -130,7 +130,8 @@ export async function GET (req:Request,{params}:{params:{productId:string}}){
             Image:true,
             category:true,
             size: true,
-            color:true
+            color:true,
+            reviews:true
 
         }})
         return NextResponse.json(product)

@@ -38,6 +38,7 @@ const formSchema = z.object({
     isFeatured: z.boolean().default(false).optional(),
     isArchived: z.boolean().default(false).optional(),
     description: z.string(),
+    searchTerm: z.string().optional(),
     inStock: z.boolean().default(true)
 });
 
@@ -59,7 +60,8 @@ function ProductForm({item, sizes, colors, categories}:ProductFormProp) {
         description:'',
         inStock:true,
         isFeatured:false,
-        isArchived:false
+        isArchived:false,
+        searchTerm:""
     }
 
 
