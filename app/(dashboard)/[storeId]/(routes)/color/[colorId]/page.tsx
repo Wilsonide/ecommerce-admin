@@ -16,7 +16,7 @@ export default async function ColorPage ({
 
 
   return (
-    <div className='flex-col'>
+    <div className='flex-col mt-16'>
         <div className='flex-1 space-y-4 pt-6 p-8'>
             <ColorForm item={color}/>
         </div>

@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation'
 import React from 'react'
 import { UserButton } from './auth/userButton'
 import MainNav from './MainNav'
+import MobileMenu from './MobileMenu'
 import StoreSwitcher from './StoreSwitcher'
 
 const Navbar =  async() => {
@@ -16,9 +17,12 @@ const Navbar =  async() => {
   const stores = await prismadb.store.findMany()
   
   return (
-    <div className='border-b '>
-        <div className='flex h-16 items-center px-4 gap-4'>
+    <div id='navbar' className='lg:border-b border-b bg-teal-500  fixed w-full top-0 z-50 '>
+        <div className='h-16 flex items-center justify-center relative px-4 sm:px-6 lg:px-4 gap-4'>
+          
+            <MobileMenu/>
             <StoreSwitcher items={stores}/>
+            
             <MainNav/>
             <div className='ml-auto flex items-center space-x-4'> 
                 <UserButton/>

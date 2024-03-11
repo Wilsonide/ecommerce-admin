@@ -63,9 +63,9 @@ function MainNav({className, ...props}: React.HTMLAttributes<HTMLElement>) {
   ]
 
   return (
-    <nav className={cn('flex items-center space-x-4 lg:space-x-6',className)}>
+    <nav className={cn('md:mx-6 md:flex md:items-center w-full md:justify-center md:space-x-6 hidden ',className)}>
       {routes.map((route) => (
-        <Link href={route.href} key={route.href} className={cn('text-sm font-medium transition-colors hover:text-primary',route.active ? 'text-black dark:text-white':'text-muted-foreground')}>
+        <Link href={route.href} key={route.href} className={cn('text-sm font-medium transition-colors hover:text-neutral-300 capitalize', route.active ? "text-black" : "text-white")}>
           {route.label}
         </Link>
       ))}
