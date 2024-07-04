@@ -15,14 +15,14 @@ export default async function SetupLayoutPage ({children}:{children:React.ReactN
     if (!userId) redirect('auth/login');
 
 
-    if (role !== "ADMIN"){
+   /*  if (role !== "ADMIN"){
         return (
             <div className="flex flex-col gap-2 items-center justify-center h-full font-semibold">
                 <FormError message="you do not have permission to view this page. You are not an ADMIN"/>
                 <Logout>LogOut</Logout>
             </div>
         )
-    }
+    } */
 
     const store = await prismadb.store.findFirst();
 
