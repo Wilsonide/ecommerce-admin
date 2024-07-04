@@ -43,13 +43,13 @@ export default function StoreSwitcher ({className, items = [] } : StoreSwitchPro
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant='outline' size='sm' role='combobox' aria-expanded={open} aria-label='select a store' className={cn('w-[200px] justify-between',className)}>
+        <Button variant='outline' size='sm' role='combobox' aria-expanded={open} aria-label='select a store' className={cn('w-[200px] justify-between text-sm font-medium',className)}>
           <StoreIcon className="mr-2 h-4 w-4"/>
           {currentStore?.label}
           <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50"/>
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="w-[200px] p-0 mb-16">
         <Command>
           <CommandList>
             <CommandInput placeholder="Search store..."/>

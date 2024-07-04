@@ -17,7 +17,7 @@ const Navbar =  async() => {
   const stores = await prismadb.store.findMany()
   
   return (
-    <div id='navbar' className='lg:border-b border-b bg-teal-500  fixed w-full top-0 z-50 '>
+    <div id='navbar' className='lg:border-b border-b bg-black  fixed w-full top-0 z-50 '>
         <div className='h-16 flex items-center justify-center relative px-4 sm:px-6 lg:px-4 gap-4'>
           
             <MobileMenu/>
