@@ -8,17 +8,18 @@ import { Social } from './Social'
 interface CardComponentProp{
     children:React.ReactNode,
     headerLabel:string,
+    headerTitle?:string,
     backButtonLabel?:string,
+    backButtonLink?:string,
     backButtonHref?:string,
     showSocial?:boolean
-    title: string
 }
 
-export const CardWrapper = ({children,headerLabel,backButtonLabel,backButtonHref,showSocial, title}:CardComponentProp) => {
+export const CardWrapper = ({children,headerLabel,backButtonLabel,backButtonHref,showSocial,headerTitle, backButtonLink}:CardComponentProp) => {
   return (
     <Card className='w-[400px] shadow-md'>
         <CardHeader>
-            <Header label={headerLabel} title={title}/>
+            <Header label={headerLabel}/>
         </CardHeader>
         <CardContent>{children}</CardContent>
         {showSocial && (
@@ -27,7 +28,9 @@ export const CardWrapper = ({children,headerLabel,backButtonLabel,backButtonHref
             </CardFooter>
         )}
         <CardFooter>
-            <BackButton label={backButtonLabel || ""} href={backButtonHref || ""}/>
+            <BackButton label={backButtonLabel || ""} 
+                href={backButtonHref || ""}
+                link={backButtonLink || ""}/>
         </CardFooter>
         
     </Card>

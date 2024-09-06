@@ -27,9 +27,9 @@ export async function POST (req:Request, {params}: {params:{storeId:string}} ){
             userId
         }
         })
-        if (!storeByUserId){
+        /* if (!storeByUserId){
             return NextResponse.json({'message':'unauthorised', 'status':403});
-        }
+        } */
 
         const color = await prismadb.color.create({data:{
             name,

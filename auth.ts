@@ -40,10 +40,10 @@ export const {
       }
       const existingUser = await getUserById(user.id);
       
-      if(!existingUser || !existingUser.emailVerified){
+      /* if(!existingUser || !existingUser.emailVerified){
         return false
-      } 
-      if (existingUser.isTwoFactorEnabled){
+      } */ 
+      if (existingUser?.isTwoFactorEnabled){
         const twoFactorConfirmation = await getTwoFactorConfirmationByUserId(existingUser.id)
         if(!twoFactorConfirmation){
           return false

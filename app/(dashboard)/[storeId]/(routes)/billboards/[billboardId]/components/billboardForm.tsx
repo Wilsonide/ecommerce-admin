@@ -55,7 +55,9 @@ function BillboardForm({item}:{item:Billboard|null}) {
                 await axios.patch(`/api/${params.storeId}/billboards/${params.billboardId}`, data)
             }
             else {
-                await axios.post(`/api/${params.storeId}/billboards`, data)
+                const res = await axios.post(`/api/${params.storeId}/billboards`, data)
+                console.log(res.data)
+                console.log("========================")
             }
             
             router.refresh()

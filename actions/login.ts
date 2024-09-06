@@ -24,14 +24,14 @@ export const login = async (values:z.infer<typeof loginSchema>)=>{
         return {error: "invalid credentials"};
     }
 
-    if (!existingUser.emailVerified){
+    /* if (!existingUser.emailVerified){
         const verificationToken = await generateVerificationToken(existingUser.email)
 
         await sendVerificationEmail(verificationToken.email, verificationToken.token)
         
-        return {success: "Confirmation email sent"}
-    }
-    if (existingUser.isTwoFactorEnabled && existingUser.email){
+        return {success: "Confirmation email sent"} 
+    }*/
+    if (existingUser?.isTwoFactorEnabled && existingUser?.email){
         if (code){
             const twoFactorToken = await getTwoFactorTokenByEmail(existingUser.email)
             if (!twoFactorToken){
