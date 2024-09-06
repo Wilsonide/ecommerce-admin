@@ -33,12 +33,15 @@ const onSubmit = (values:z.infer<typeof loginSchema>) => {
                     form.reset();
                     setError(data.error)
                 }
-                if (data?.success){
+                /* if (data?.success){
                     form.reset();
                     setSuccess(data.success)
-                }
+                } */
                 if (data?.twoFactor){
                     setShowTwoFactor(true)
+                }
+                else{
+                    form.reset();
                 }
             })
         
@@ -57,7 +60,7 @@ const form = useForm<z.infer<typeof loginSchema >>({
     }
 })
   return (
-    <CardWrapper headerLabel='Welcome back' backButtonLabel="Don't have an account?" backButtonHref='/auth/register' showSocial title='Login here!'>
+    <CardWrapper headerLabel='Welcome back' backButtonLabel="Don't have an account?" backButtonLink='Signup'  backButtonHref='/auth/register' showSocial headerTitle='Login here'>
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <div className='space-y-4'>
