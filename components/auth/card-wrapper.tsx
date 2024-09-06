@@ -15,7 +15,7 @@ interface CardComponentProp{
     showSocial?:boolean
 }
 
-export const CardWrapper = ({children,headerLabel,backButtonLabel,backButtonHref,showSocial,headerTitle, backButtonLink}:CardComponentProp) => {
+export const CardWrapper = ({children,headerLabel,backButtonLabel,backButtonHref,showSocial, backButtonLink}:CardComponentProp) => {
   return (
     <Card className='w-[400px] shadow-md'>
         <CardHeader>
