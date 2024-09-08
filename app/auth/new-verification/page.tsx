@@ -34,7 +34,7 @@ const Verificationpage = () => {
     },[onSubmit])
 
   return (
-    <CardWrapper headerLabel='Verify Your Email' backButtonHref='/auth/login' backButtonLabel='Back to login' title='Email Verification Page'>
+    <CardWrapper headerLabel='Verify Your Email' backButtonHref='/auth/login' backButtonLabel='Back to login' headerTitle='Email Verification Page'>
         <div className='flex items-center w-full justify-center'>
             { !success && !error && <BeatLoader/>}
             <FormSuccess message={success}/>
