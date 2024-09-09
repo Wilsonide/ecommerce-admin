@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 const SettingsPage = () => {
     const user = useCurrentUser()
   return (
-    <CardWrapper headerLabel='Manage your account information' title='Settings'>
+    <CardWrapper headerLabel='Manage your account information' headerTitle='Settings'>
         <div className='space-y-6'>
             <div className='flex flex-col p-2'>
                 <p>Profile</p>
