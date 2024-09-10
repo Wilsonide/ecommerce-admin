@@ -31,13 +31,13 @@ export const ApiAlert :React.FC<ApiAlertProps>= ({title,description,variant})=>{
     
     }
     return (
-        <Alert>
+        <Alert className="">
             <Server className="h-5 w-5 text-center"/>
             <AlertTitle className="flex items-center gap-x-2">
                 {title}
                 <Badge variant={variantMap[variant]}>{textMap[variant]}</Badge>
             </AlertTitle>
-            <AlertDescription className="flex items-center justify-between mt-4">
+            <AlertDescription className="overflow-x-auto flex items-center justify-between mt-4">
                 <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold">
                     {description}
                 </code>
