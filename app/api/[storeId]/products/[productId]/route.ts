@@ -67,7 +67,8 @@ export async function PATCH (req:Request,{params}:{params:{productId:string, sto
             Image:{deleteMany:{}},
             isFeatured,
             quantity,
-            isArchived
+            isArchived,
+            description,
         }
         })
 
@@ -141,5 +142,6 @@ export async function GET (req:Request,{params}:{params:{productId:string}}){
         return NextResponse.json({"message":"internal error",status:500})
         
     }
+
 
 }
